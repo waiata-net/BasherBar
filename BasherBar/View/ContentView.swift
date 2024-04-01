@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(Basher.self) var basher
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        switch basher.page {
+        case .setting: SettingView()
+        case .cricket: CricketView()
         }
-        .padding()
     }
+    
 }
 
 #Preview {

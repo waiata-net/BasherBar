@@ -14,6 +14,25 @@
 		08DD93102BBA54B7000E18BF /* BasherBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD930F2BBA54B7000E18BF /* BasherBarTests.swift */; };
 		08DD931A2BBA54B7000E18BF /* BasherBarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93192BBA54B7000E18BF /* BasherBarUITests.swift */; };
 		08DD931C2BBA54B7000E18BF /* BasherBarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD931B2BBA54B7000E18BF /* BasherBarUITestsLaunchTests.swift */; };
+		08DD932C2BBA5545000E18BF /* BarLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD932B2BBA5545000E18BF /* BarLabel.swift */; };
+		08DD932E2BBA5563000E18BF /* Cricket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD932D2BBA5563000E18BF /* Cricket.swift */; };
+		08DD93302BBA5588000E18BF /* Basher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD932F2BBA5588000E18BF /* Basher.swift */; };
+		08DD93332BBA571F000E18BF /* Fuzi in Frameworks */ = {isa = PBXBuildFile; productRef = 08DD93322BBA571F000E18BF /* Fuzi */; };
+		08DD93352BBA59E0000E18BF /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93342BBA59E0000E18BF /* Defaults.swift */; };
+		08DD933B2BBA6239000E18BF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD933A2BBA6239000E18BF /* SettingView.swift */; };
+		08DD933D2BBA6241000E18BF /* CricketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD933C2BBA6241000E18BF /* CricketView.swift */; };
+		08DD933F2BBA6301000E18BF /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD933E2BBA6301000E18BF /* Dummy.swift */; };
+		08DD93422BBA67EC000E18BF /* Web.Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93412BBA67EC000E18BF /* Web.Page.swift */; };
+		08DD93452BBA6ECF000E18BF /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93442BBA6ECF000E18BF /* Preference.swift */; };
+		08DD93472BBA7912000E18BF /* Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93462BBA7912000E18BF /* Web.swift */; };
+		08DD93492BBA8E64000E18BF /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93482BBA8E64000E18BF /* Fixture.swift */; };
+		08DD934B2BBA8FD9000E18BF /* CricHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD934A2BBA8FD9000E18BF /* CricHeroes.swift */; };
+		08DD934D2BBA9547000E18BF /* Cricket.Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD934C2BBA9547000E18BF /* Cricket.Match.swift */; };
+		08DD934F2BBA9C26000E18BF /* FixtureViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD934E2BBA9C26000E18BF /* FixtureViews.swift */; };
+		08DD93512BBAA593000E18BF /* Web.Part.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93502BBAA593000E18BF /* Web.Part.swift */; };
+		08DD93532BBAADF3000E18BF /* Cricket.Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93522BBAADF3000E18BF /* Cricket.Team.swift */; };
+		08DD93552BBAAE35000E18BF /* Cricket.Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93542BBAAE35000E18BF /* Cricket.Score.swift */; };
+		08DD93582BBAB5F8000E18BF /* MatchViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93572BBAB5F8000E18BF /* MatchViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +64,24 @@
 		08DD93152BBA54B7000E18BF /* BasherBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasherBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08DD93192BBA54B7000E18BF /* BasherBarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasherBarUITests.swift; sourceTree = "<group>"; };
 		08DD931B2BBA54B7000E18BF /* BasherBarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasherBarUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		08DD932B2BBA5545000E18BF /* BarLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLabel.swift; sourceTree = "<group>"; };
+		08DD932D2BBA5563000E18BF /* Cricket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricket.swift; sourceTree = "<group>"; };
+		08DD932F2BBA5588000E18BF /* Basher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basher.swift; sourceTree = "<group>"; };
+		08DD93342BBA59E0000E18BF /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		08DD933A2BBA6239000E18BF /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		08DD933C2BBA6241000E18BF /* CricketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricketView.swift; sourceTree = "<group>"; };
+		08DD933E2BBA6301000E18BF /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
+		08DD93412BBA67EC000E18BF /* Web.Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web.Page.swift; sourceTree = "<group>"; };
+		08DD93442BBA6ECF000E18BF /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		08DD93462BBA7912000E18BF /* Web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web.swift; sourceTree = "<group>"; };
+		08DD93482BBA8E64000E18BF /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
+		08DD934A2BBA8FD9000E18BF /* CricHeroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricHeroes.swift; sourceTree = "<group>"; };
+		08DD934C2BBA9547000E18BF /* Cricket.Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricket.Match.swift; sourceTree = "<group>"; };
+		08DD934E2BBA9C26000E18BF /* FixtureViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViews.swift; sourceTree = "<group>"; };
+		08DD93502BBAA593000E18BF /* Web.Part.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web.Part.swift; sourceTree = "<group>"; };
+		08DD93522BBAADF3000E18BF /* Cricket.Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricket.Team.swift; sourceTree = "<group>"; };
+		08DD93542BBAAE35000E18BF /* Cricket.Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricket.Score.swift; sourceTree = "<group>"; };
+		08DD93572BBAB5F8000E18BF /* MatchViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08DD93332BBA571F000E18BF /* Fuzi in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +133,11 @@
 		08DD92FC2BBA54B6000E18BF /* BasherBar */ = {
 			isa = PBXGroup;
 			children = (
-				08DD92FD2BBA54B6000E18BF /* BasherBarApp.swift */,
-				08DD92FF2BBA54B6000E18BF /* ContentView.swift */,
+				08DD93282BBA550A000E18BF /* Main */,
+				08DD93292BBA5519000E18BF /* View */,
+				08DD932A2BBA5520000E18BF /* Basher */,
+				08DD93562BBAAE6E000E18BF /* Cricket */,
+				08DD93402BBA67D0000E18BF /* Web */,
 				08DD93012BBA54B7000E18BF /* Assets.xcassets */,
 				08DD93032BBA54B7000E18BF /* BasherBar.entitlements */,
 				08DD93042BBA54B7000E18BF /* Preview Content */,
@@ -129,6 +170,61 @@
 			path = BasherBarUITests;
 			sourceTree = "<group>";
 		};
+		08DD93282BBA550A000E18BF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				08DD92FD2BBA54B6000E18BF /* BasherBarApp.swift */,
+				08DD93342BBA59E0000E18BF /* Defaults.swift */,
+				08DD93442BBA6ECF000E18BF /* Preference.swift */,
+				08DD933E2BBA6301000E18BF /* Dummy.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		08DD93292BBA5519000E18BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08DD932B2BBA5545000E18BF /* BarLabel.swift */,
+				08DD92FF2BBA54B6000E18BF /* ContentView.swift */,
+				08DD933A2BBA6239000E18BF /* SettingView.swift */,
+				08DD934E2BBA9C26000E18BF /* FixtureViews.swift */,
+				08DD93572BBAB5F8000E18BF /* MatchViews.swift */,
+				08DD933C2BBA6241000E18BF /* CricketView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08DD932A2BBA5520000E18BF /* Basher */ = {
+			isa = PBXGroup;
+			children = (
+				08DD932F2BBA5588000E18BF /* Basher.swift */,
+				08DD93482BBA8E64000E18BF /* Fixture.swift */,
+			);
+			path = Basher;
+			sourceTree = "<group>";
+		};
+		08DD93402BBA67D0000E18BF /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				08DD93462BBA7912000E18BF /* Web.swift */,
+				08DD93412BBA67EC000E18BF /* Web.Page.swift */,
+				08DD93502BBAA593000E18BF /* Web.Part.swift */,
+				08DD934A2BBA8FD9000E18BF /* CricHeroes.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		08DD93562BBAAE6E000E18BF /* Cricket */ = {
+			isa = PBXGroup;
+			children = (
+				08DD932D2BBA5563000E18BF /* Cricket.swift */,
+				08DD934C2BBA9547000E18BF /* Cricket.Match.swift */,
+				08DD93522BBAADF3000E18BF /* Cricket.Team.swift */,
+				08DD93542BBAAE35000E18BF /* Cricket.Score.swift */,
+			);
+			path = Cricket;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +241,9 @@
 			dependencies = (
 			);
 			name = BasherBar;
+			packageProductDependencies = (
+				08DD93322BBA571F000E18BF /* Fuzi */,
+			);
 			productName = BasherBar;
 			productReference = 08DD92FA2BBA54B6000E18BF /* BasherBar.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +316,9 @@
 				Base,
 			);
 			mainGroup = 08DD92F12BBA54B6000E18BF;
+			packageReferences = (
+				08DD93312BBA571F000E18BF /* XCRemoteSwiftPackageReference "Fuzi" */,
+			);
 			productRefGroup = 08DD92FB2BBA54B6000E18BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,8 +361,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08DD93532BBAADF3000E18BF /* Cricket.Team.swift in Sources */,
+				08DD93512BBAA593000E18BF /* Web.Part.swift in Sources */,
+				08DD93492BBA8E64000E18BF /* Fixture.swift in Sources */,
 				08DD93002BBA54B6000E18BF /* ContentView.swift in Sources */,
+				08DD934F2BBA9C26000E18BF /* FixtureViews.swift in Sources */,
+				08DD932E2BBA5563000E18BF /* Cricket.swift in Sources */,
+				08DD93582BBAB5F8000E18BF /* MatchViews.swift in Sources */,
+				08DD93302BBA5588000E18BF /* Basher.swift in Sources */,
+				08DD934B2BBA8FD9000E18BF /* CricHeroes.swift in Sources */,
+				08DD933D2BBA6241000E18BF /* CricketView.swift in Sources */,
+				08DD93422BBA67EC000E18BF /* Web.Page.swift in Sources */,
+				08DD93452BBA6ECF000E18BF /* Preference.swift in Sources */,
+				08DD934D2BBA9547000E18BF /* Cricket.Match.swift in Sources */,
+				08DD93472BBA7912000E18BF /* Web.swift in Sources */,
+				08DD93552BBAAE35000E18BF /* Cricket.Score.swift in Sources */,
+				08DD93352BBA59E0000E18BF /* Defaults.swift in Sources */,
+				08DD933B2BBA6239000E18BF /* SettingView.swift in Sources */,
 				08DD92FE2BBA54B6000E18BF /* BasherBarApp.swift in Sources */,
+				08DD933F2BBA6301000E18BF /* Dummy.swift in Sources */,
+				08DD932C2BBA5545000E18BF /* BarLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +737,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		08DD93312BBA571F000E18BF /* XCRemoteSwiftPackageReference "Fuzi" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cezheng/Fuzi";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08DD93322BBA571F000E18BF /* Fuzi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08DD93312BBA571F000E18BF /* XCRemoteSwiftPackageReference "Fuzi" */;
+			productName = Fuzi;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 08DD92F22BBA54B6000E18BF /* Project object */;
 }
