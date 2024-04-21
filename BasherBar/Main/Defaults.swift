@@ -6,21 +6,29 @@
 //
 
 import SwiftUI
+import Combine
 
 struct Default {
     
-    @Preference(key: .fixturePages, def: [Web.Page.dummy()])
-    static var fixturePages: [Web.Page]
+    
+    @Preference(key: .numbers, def: [1,2,3])
+    static var numbers: [Int]
+    
+    
+    @Preference(key: .fixtures, def: [])
+    static var fixtures: [Fixture]
     
     @Preference(key: .matchPage, def: Web.Page())
     static var matchPage: Web.Page
+    
     
 }
 
 extension Preference {
     
     enum Key: String {
-        case fixturePages
+        case numbers
+        case fixtures
         case matchPage
     }
     

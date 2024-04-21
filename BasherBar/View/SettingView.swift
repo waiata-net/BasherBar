@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingView: View {
     
-    @Environment(Basher.self) var basher
+    @EnvironmentObject var basher: Basher
     
     var body: some View {
         Form {
@@ -35,5 +35,5 @@ struct SettingView: View {
 
 #Preview {
     SettingView()
-        .environment(Basher.dummy())
+        .environmentObject(Basher.dummy())
 }

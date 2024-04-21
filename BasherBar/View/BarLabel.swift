@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BarLabel: View {
     
-    @Environment(Basher.self) var basher
+    @EnvironmentObject var basher: Basher
     
     var body: some View {
         Label(basher.bar, systemImage: "cricket.ball.fill")
@@ -18,5 +18,5 @@ struct BarLabel: View {
 
 #Preview {
     BarLabel()
-        .environment(Basher.dummy())
+        .environmentObject(Basher.dummy())
 }

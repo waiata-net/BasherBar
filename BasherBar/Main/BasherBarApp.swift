@@ -17,6 +17,10 @@ struct BasherBarApp: App {
             SettingView()
                 .environmentObject(basher)
         }
+        Window("Cricket", id: "Cricket") {
+            CricketView()
+                .environmentObject(basher)
+        }
         MenuBarExtra {
             ContentView()
                 .environmentObject(basher)

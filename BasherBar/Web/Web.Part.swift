@@ -61,6 +61,11 @@ extension Web {
             }
         }
         
+        func datum(in box: Box) -> Data? {
+            guard let string = string(in: box) else { return nil }
+            return string.data(using: .utf8)
+        }
+        
         
     }
 }

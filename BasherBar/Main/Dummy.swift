@@ -13,8 +13,19 @@ extension Basher {
     }
 }
 
-extension Web.Page {
-    static func dummy() -> Web.Page {
-        Web.Page(address: "https://cricheroes.com/tournament/921383/scc-t20-2024-d1/matches/past-matches")
+extension Fixture {
+    static func dummy() async -> Fixture {
+        await Fixture(
+            page: Web.Page(address: "https://cricheroes.com/tournament/921383/scc-t20-2024-d1/matches/past-matches")
+        )
+    }
+}
+
+extension Cricket.Match {
+    
+    static let link = "http://localhost/data/cricheroes.html"
+    
+    static func dummy() -> Cricket.Match {
+        Cricket.Match(link: link)
     }
 }

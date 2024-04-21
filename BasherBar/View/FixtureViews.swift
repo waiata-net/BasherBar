@@ -9,42 +9,33 @@ import SwiftUI
 
 struct FixtureList: View {
     
-    @Environment(Basher.self) var basher
+    @EnvironmentObject var basher: Basher
     
     var body: some View {
-        @Bindable var basher = basher
         List {
-            ForEach(basher.fixturePages.indices, id: \.self) { index in
-                FixtureItem(page: $basher.fixturePages[index] )
+            ForEach(basher.fixtures.indices, id: \.self) { index in
+                FixtureItem(fixture: $basher.fixtures[index] )
             }
-            Button(action: basher.addFixturePage) {
+            Button(action: basher.addFixture) {
                 Label ("Add Fixture", systemImage: "plus.square")
             }
-            
         }
     }
 }
 
 struct FixtureItem: View {
     
-    @Environment(Basher.self) var basher
-    @Binding var page: Web.Page
-    @State var editing = false
+    @EnvironmentObject var basher: Basher
+    @Binding var fixture: Fixture
     
     var body: some View {
         HStack {
-            if editing {
-                TextField("", text: $page.address)
+            TextField("", text: $fixture.page.address)
                     .textFieldStyle(.plain)
-            } else {
-                Text(page.url?.lastPathComponent ?? page.address)
-                    .onTapGesture {
-                        editing = true
-                    }
-            }
+            
             Spacer()
             Button {
-                basher.trash(page)
+                basher.trash(fixture)
             } label: {
                 Image(systemName: "trash")
             }
@@ -55,5 +46,5 @@ struct FixtureItem: View {
 
 #Preview {
     FixtureList()
-    .environment(Basher.dummy())
+    .environmentObject(Basher.dummy())
 }

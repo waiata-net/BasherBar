@@ -10,11 +10,11 @@ import SwiftUI
 
 struct MatchPick: View {
     
-    @Environment(Basher.self) var basher
+    @EnvironmentObject var basher: Basher
     
-    var body: some View {
-        @Bindable var basher = basher
+    var body: some View {        
         Picker("Select a Match", selection: $basher.selectedMatchID) {
+            Text("Pick a Match").tag(nil as UUID?)
             ForEach($basher.matches.indices, id: \.self) { index in
                 MatchItem(match: $basher.matches[index] )
             }
@@ -24,10 +24,9 @@ struct MatchPick: View {
 
 struct MatchList: View {
     
-    @Environment(Basher.self) var basher
+    @EnvironmentObject var basher: Basher
     
     var body: some View {
-        @Bindable var basher = basher
         List {
             ForEach($basher.matches.indices, id: \.self) { index in
                 MatchItem(match: $basher.matches[index] )
@@ -38,12 +37,13 @@ struct MatchList: View {
 
 struct MatchItem: View {
     
-    @Environment(Basher.self) var basher
+    @EnvironmentObject var basher: Basher
     @Binding var match: Cricket.Match
     
     var body: some View {
         HStack {
-            Text(match.title)
+            Text(match.id.uuidString.suffix(3))
+            Text(match.versus)
         }
         .tag(match.id)
     }
@@ -52,5 +52,5 @@ struct MatchItem: View {
 
 #Preview {
     MatchList()
-        .environment(Basher.dummy())
+        .environmentObject(Basher.dummy())
 }

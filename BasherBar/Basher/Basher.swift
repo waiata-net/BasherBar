@@ -7,61 +7,58 @@
 
 import SwiftUI
 
-@Observable
 class Basher: ObservableObject {
     
     // MARK: - Fixtures
     
-    var fixturePages = Default.fixturePages {
-        didSet { Default.fixturePages = fixturePages }
+    @Published var fixtures: [Fixture] = Default.fixtures {
+        didSet {
+            Default.fixtures = self.fixtures
+            
+        }
     }
+
+    
+    func addFixture() {
+        let new = Fixture()
+        fixtures.append(new)
+    }
+    
+    func trash(_ fixture: Fixture) {
+        guard let index = fixtures.firstIndex(where: { $0.id == fixture.id }) else { return }
+        fixtures.remove(at: index)
+    }
+
+    // MARK: - Matches
     
     var matches = [Cricket.Match]()
     
-    var selectedMatchID: UUID?
+    @Published var selectedMatchID: UUID?
     
-    var match: Cricket.Match? {
-        get {
-            matches.first(where: { $0.id == selectedMatchID }) ?? matches.first
-        }
-        set {
-            selectedMatchID = newValue?.id
-        }
-    }
+    @Published var match = Cricket.Match()
     
-    func addFixturePage() {
-        let new = Web.Page()
-        fixturePages.append(new)
-    }
+    // MARK: - Fetch
     
-    func trash(_ fixturePage: Web.Page) {
-        guard let index = fixturePages.firstIndex(where: { $0.id == fixturePage.id }) else { return }
-        fixturePages.remove(at: index)
-    }
-
     func fetch() async {
-        var fixtures = [Fixture]()
-        for page in fixturePages {
-            async let fixture = Fixture(page: page)
-            if let fix = await fixture {
-                fixtures.append(fix)
-            }
+        matches = []
+        for fixture in fixtures {
+            let more = await fixture.matches()
+            matches.append(contentsOf: more)
         }
-        matches = fixtures.flatMap { $0.matches }
     }
     
     
     // MARK: - Bar
     
     var bar: String {
-        matches.first?.title ?? "Bashers!"
+        matches.first?.versus ?? "Bashers!"
     }
     
     // MARK: - Pagination
     
-    var page = Page.setting
+    var tab = Tab.cricket
     
-    enum Page {
+    enum Tab {
         case setting
         case cricket
     }

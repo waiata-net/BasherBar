@@ -8,10 +8,16 @@
 import Foundation
 
 extension Cricket {
-    struct Team {
+    struct Team: Identifiable {
+        
+        var id: Int = UUID().hashValue
         
         var name: String = ""
-        var score = Score()
+        var logo: String = ""
+        var inns = [Score]()
         
+        var score: String {
+            inns.map { $0.text }.joined(separator: "&")
+        }
     }
 }

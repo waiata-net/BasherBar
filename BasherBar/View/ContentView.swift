@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @Environment(Basher.self) var basher
+    @EnvironmentObject var basher: Basher
     
     var body: some View {
-        switch basher.page {
+        switch basher.tab {
         case .setting: SettingView()
         case .cricket: CricketView()
         }
