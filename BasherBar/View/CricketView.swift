@@ -7,143 +7,91 @@
 
 import SwiftUI
 
-struct CricketView: View {
+
+struct GameView: View {
     
     @EnvironmentObject var basher: Basher
     
-    @State var countdown: String = ""
+    var game: Cricket.Game
     
-    let tick = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-
     var body: some View {
         VStack {
-            
-            MatchPick()
+            Text(game.versus)
+                .font(.title)
+            HStack {
+                Text(game.league ?? "")
+                Text("@")
+                Text(game.venue ?? "")
+            }
+            .font(.subheadline)
             
             Divider()
             
-            if let game = basher.match.game {
-                
-                GameView(game: game)
-                
-                Divider()
+            ForEach(game.innings, id: \.score.order) {
+                InningsView(team: $0.team, score: $0.score)
             }
+            .font(.title2)
+            
+            Divider()
+            
+            LiveView(live: game.live)
             
             Button {
-                refresh()
+                Task {
+                    await basher.refresh(id: game.id)
+                }
             } label: {
-                Label(countdown, systemImage: "arrow.clockwise")
+                Label("Refresh", systemImage: "arrow.clockwise")
             }
-            
         }
         .padding()
-        .onAppear {
-            refresh()
-        }
-        .onReceive(tick) { _ in
-            if basher.ticker.isValid {
-                countdown = "\(Int(basher.ticker.fireDate.timeIntervalSinceNow))"
-            } else {
-                countdown = "Refresh"
-            }
-        }
         
     }
+}
+
+struct InningsView: View {
     
-    func refresh() {
-        basher.tock()
-    }
+    var team: Cricket.Team
+    var score: Cricket.Score
     
-    struct MatchView: View {
-        
-        @EnvironmentObject var basher: Basher
-        
-        var body: some View {
-            HStack {
-                Button {
-                    basher.match = .dummy()
-                } label: {
-                    Label("Dummy", systemImage: "arrow.right")
-                }
-                TextField("Match Address:", text: $basher.match.link)
-                
-            }
-            
-        }
-    }
-    struct GameView: View {
-        
-        var game: Cricket.Game
-        
-        var body: some View {
-            VStack {
-                Text(game.versus)
-                    .font(.title)
-                HStack {
-                    Text(game.league ?? "")
-                    Text("@")
-                    Text(game.venue ?? "")
-                }
-                .font(.subheadline)
-                
-                Divider()
-                
-                ForEach(game.innings, id: \.score.order) {
-                    InningsView(team: $0.team, score: $0.score)
-                }
-                .font(.title2)
-                
-                Divider()
-                
-                LiveView(live: game.live)
-            }
-            
-        }
-    }
-    
-    struct InningsView: View {
-        
-        var team: Cricket.Team
-        var score: Cricket.Score
-        
-        var body: some View {
-            HStack {
-                TeamLabel(team: team)
-                Spacer()
-                ScoreView(score: score)
-            }
-        }
-    }
-    
-    struct TeamLabel: View {
-        
-        var team: Cricket.Team
-        
-        var body: some View {
-            HStack {
-                AsyncImage(url: URL(string: team.logo)) { image in
-                    image.resizable()
-                } placeholder: {
-                    ProgressView()
-                }
-                .frame(width: 36, height: 36)
-                Text(team.name)
-            }
-        }
-    }
-    
-    struct ScoreView: View {
-        
-        var score: Cricket.Score
-        
-        var body: some View {
-            Text(score.text)
+    var body: some View {
+        HStack {
+            TeamLabel(team: team)
+            Spacer()
+            ScoreView(score: score)
         }
     }
 }
 
+struct TeamLabel: View {
+    
+    var team: Cricket.Team
+    
+    var body: some View {
+        HStack {
+            AsyncImage(url: URL(string: team.logo)) { image in
+                image.resizable()
+            } placeholder: {
+                ProgressView()
+            }
+            .frame(width: 36, height: 36)
+            Text(team.name)
+        }
+    }
+}
+
+struct ScoreView: View {
+    
+    var score: Cricket.Score
+    
+    var body: some View {
+        Text(score.text)
+    }
+}
+
+
 #Preview {
-    CricketView()
+    ContentView()
         .environmentObject(Basher.dummy())
         .frame(width: 600, height: 600)
 }

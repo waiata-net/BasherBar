@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		080117112BD60C5300E341D4 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080117102BD60C5300E341D4 /* Match.swift */; };
+		080117132BD6577600E341D4 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080117122BD6577600E341D4 /* Toolbar.swift */; };
 		08DD92FE2BBA54B6000E18BF /* BasherBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD92FD2BBA54B6000E18BF /* BasherBarApp.swift */; };
 		08DD93002BBA54B6000E18BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD92FF2BBA54B6000E18BF /* ContentView.swift */; };
 		08DD93022BBA54B7000E18BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08DD93012BBA54B7000E18BF /* Assets.xcassets */; };
@@ -24,7 +25,6 @@
 		08DD933D2BBA6241000E18BF /* CricketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD933C2BBA6241000E18BF /* CricketView.swift */; };
 		08DD933F2BBA6301000E18BF /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD933E2BBA6301000E18BF /* Dummy.swift */; };
 		08DD93422BBA67EC000E18BF /* Web.Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93412BBA67EC000E18BF /* Web.Page.swift */; };
-		08DD93452BBA6ECF000E18BF /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93442BBA6ECF000E18BF /* Preference.swift */; };
 		08DD93472BBA7912000E18BF /* Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93462BBA7912000E18BF /* Web.swift */; };
 		08DD93492BBA8E64000E18BF /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93482BBA8E64000E18BF /* Fixture.swift */; };
 		08DD934B2BBA8FD9000E18BF /* CricHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD934A2BBA8FD9000E18BF /* CricHeroes.swift */; };
@@ -58,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		080117102BD60C5300E341D4 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		080117122BD6577600E341D4 /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		08DD92FA2BBA54B6000E18BF /* BasherBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasherBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08DD92FD2BBA54B6000E18BF /* BasherBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasherBarApp.swift; sourceTree = "<group>"; };
 		08DD92FF2BBA54B6000E18BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		08DD933C2BBA6241000E18BF /* CricketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricketView.swift; sourceTree = "<group>"; };
 		08DD933E2BBA6301000E18BF /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		08DD93412BBA67EC000E18BF /* Web.Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web.Page.swift; sourceTree = "<group>"; };
-		08DD93442BBA6ECF000E18BF /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		08DD93462BBA7912000E18BF /* Web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web.swift; sourceTree = "<group>"; };
 		08DD93482BBA8E64000E18BF /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		08DD934A2BBA8FD9000E18BF /* CricHeroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricHeroes.swift; sourceTree = "<group>"; };
@@ -183,7 +183,6 @@
 			children = (
 				08DD92FD2BBA54B6000E18BF /* BasherBarApp.swift */,
 				08DD93342BBA59E0000E18BF /* Defaults.swift */,
-				08DD93442BBA6ECF000E18BF /* Preference.swift */,
 				08DD933E2BBA6301000E18BF /* Dummy.swift */,
 			);
 			path = Main;
@@ -194,6 +193,7 @@
 			children = (
 				08DD932B2BBA5545000E18BF /* BarLabel.swift */,
 				08DD92FF2BBA54B6000E18BF /* ContentView.swift */,
+				080117122BD6577600E341D4 /* Toolbar.swift */,
 				08DD933A2BBA6239000E18BF /* SettingView.swift */,
 				08DD934E2BBA9C26000E18BF /* FixtureViews.swift */,
 				08DD93572BBAB5F8000E18BF /* MatchViews.swift */,
@@ -376,6 +376,7 @@
 				08DD93532BBAADF3000E18BF /* Cricket.Team.swift in Sources */,
 				08DD93512BBAA593000E18BF /* Web.Part.swift in Sources */,
 				08DD93492BBA8E64000E18BF /* Fixture.swift in Sources */,
+				080117132BD6577600E341D4 /* Toolbar.swift in Sources */,
 				08DDB0632BD5605F0016502D /* LiveViews.swift in Sources */,
 				08DD93002BBA54B6000E18BF /* ContentView.swift in Sources */,
 				08DD934F2BBA9C26000E18BF /* FixtureViews.swift in Sources */,
@@ -385,7 +386,6 @@
 				08DD934B2BBA8FD9000E18BF /* CricHeroes.swift in Sources */,
 				08DD933D2BBA6241000E18BF /* CricketView.swift in Sources */,
 				08DD93422BBA67EC000E18BF /* Web.Page.swift in Sources */,
-				08DD93452BBA6ECF000E18BF /* Preference.swift in Sources */,
 				08DD934D2BBA9547000E18BF /* Cricket.Game.swift in Sources */,
 				08DD93472BBA7912000E18BF /* Web.swift in Sources */,
 				08DDB0612BD554540016502D /* Cricket.Player.swift in Sources */,

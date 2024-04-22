@@ -12,14 +12,35 @@ struct ContentView: View {
     @EnvironmentObject var basher: Basher
     
     var body: some View {
-        switch basher.tab {
-        case .setting: SettingView()
-        case .cricket: CricketView()
+        
+        TabView(selection: $basher.tab) {
+            
+            SettingView()
+                .tag(Basher.Tab.setting)
+                .tabItem { Label("Settings", systemImage: "gear") }
+            
+            ForEach(basher.games) { game in
+                GameView(game: game)
+                    .tag(Basher.Tab.cricket(game.id))
+                    .tabItem { Text(game.versus) }
+            }
+            
+            
         }
+        .padding()
+        .toolbar {
+            Toolbar()
+        }
+        .onAppear {
+            basher.tock()
+        }
+
     }
+    
     
 }
 
 #Preview {
     ContentView()
+        .environmentObject(Basher.dummy())
 }

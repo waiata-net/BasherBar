@@ -16,6 +16,7 @@ extension Web {
         var css: String?
         var xpath: String?
         var attribute: String?
+        var prefix: String?
 
         
         typealias Node = Fuzi.XMLNode
@@ -44,21 +45,27 @@ extension Web {
         
         func strings(in box: Box) -> [String] {
             return elements(in: box).compactMap {
-                if let a = attribute {
-                    $0.attr(a)
-                } else {
-                    $0.stringValue
-                }
+                string($0)
             }
         }
         
         func string(in box: Box) -> String? {
             guard let first = first(in: box) else { return nil }
+            return string(first)
+        }
+        
+        func string(_ element: Element?) -> String? {
+            guard let element else { return nil }
             if let a = attribute {
-              return first.attr(a)
+              return pre(element.attr(a))
             } else {
-                return first.stringValue
+                return pre(element.stringValue)
             }
+        }
+        
+        func pre(_ plus: String?) -> String? {
+            guard let plus else { return nil }
+            return (prefix ?? "") + plus
         }
         
         func datum(in box: Box) -> Data? {

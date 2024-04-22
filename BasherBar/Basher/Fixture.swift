@@ -52,6 +52,7 @@ struct Fixture: Identifiable, Codable {
             return Cricket.Team(name: name)
         }
         match.title = teams.map { $0.name }.joined(separator: " v ")
+        match.link = box.string(CricHeroes.fixtureLink) ?? ""
         return match
     }
     

@@ -16,7 +16,8 @@ struct Default {
             return links.compactMap { Fixture(rawValue: $0) }
         }
         set {
-            set(.fixtures, newValue)
+            let links = newValue.map { $0.page.address }
+            set(.fixtures, links)
         }
     }
     
@@ -50,12 +51,3 @@ struct Default {
     }
 }
 
-extension Preference {
-    
-    enum Key: String {
-        case numbers
-        case fixtures
-        case matchPage
-    }
-    
-}

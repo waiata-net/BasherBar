@@ -8,25 +8,25 @@
 import SwiftUI
 
 
-struct MatchPick: View {
-    
-    @EnvironmentObject var basher: Basher
-    
-    var body: some View {        
-        Picker("Select a Match", selection: $basher.match) {
-            ForEach($basher.matches.indices, id: \.self) { index in
-                MatchItem(match: $basher.matches[index] )
-            }
-        }
-    }
-}
+//struct MatchPick: View {
+//    
+//    @EnvironmentObject var basher: Basher
+//    
+//    var body: some View {        
+//        Picker("Select a Match", selection: $basher.match) {
+//            ForEach($basher.matches.indices, id: \.self) { index in
+//                MatchItem(match: $basher.matches[index] )
+//            }
+//        }
+//    }
+//}
 
 struct MatchList: View {
     
     @EnvironmentObject var basher: Basher
     
     var body: some View {
-        List {
+        List(selection: $basher.matchIDs) {
             ForEach($basher.matches.indices, id: \.self) { index in
                 MatchItem(match: $basher.matches[index] )
             }
@@ -41,7 +41,6 @@ struct MatchItem: View {
     
     var body: some View {
         HStack {
-            Text(match.id.uuidString.suffix(3))
             Text(match.title)
         }
         .tag(match.id)

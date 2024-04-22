@@ -10,9 +10,9 @@ import Fuzi
 
 struct CricHeroes {
     
-    static let fixtureMatches = Web.Part(css: "section.currentTab .row a")
+    static let fixtureMatches = Web.Part(css: "section.currentTab div.card")
     
-    static let fixtureLink = Web.Part(attribute: "href")
+    static let fixtureLink = Web.Part(css: "a", attribute: "href", prefix: "https://cricheroes.com")
     static let fixtureLeague = Web.Part(css: "i")
     
     static let fixtureTeams = Web.Part(css: ".dDmbeZ")
@@ -64,7 +64,7 @@ struct CricHeroes {
             let doc = try await Web.Page(address: match.link).doc(),
             let json = json(from: doc)
         else { return nil }
-        var game = Cricket.Game()
+        var game = Cricket.Game(id: match.id)
         game.league = json[tourny] as? String
         game.venue = json[venue] as? String
         game.teams = [teamA, teamB].compactMap {

@@ -14,8 +14,9 @@ struct SettingView: View {
     var body: some View {
         Form {
             FixtureList()
+            
             MatchList()
-            MatchPick()
+            
             Button {
                 Task {
                     await basher.fetchMatches()
@@ -25,6 +26,9 @@ struct SettingView: View {
             }
             
             RefreshPick()
+                .onSubmit {
+                    basher.tock()
+                }
         }
         .padding()
         .task {

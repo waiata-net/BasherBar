@@ -8,7 +8,9 @@
 import Foundation
 
 extension Cricket {
-    struct Game {
+    struct Game: Identifiable {
+        
+        var id: UUID
         
         var league: String?
         var venue: String?

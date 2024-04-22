@@ -146,7 +146,7 @@ struct RecentView: View {
 }
 
 #Preview {
-    CricketView()
+    ContentView()
         .environmentObject(Basher.dummy())
         .frame(height: 600)
 }

@@ -13,12 +13,8 @@ struct BasherBarApp: App {
     @StateObject var basher = Basher()
     
     var body: some Scene {
-        Window("Settings", id: "Settings") {
-            SettingView()
-                .environmentObject(basher)
-        }
         Window("Cricket", id: "Cricket") {
-            CricketView()
+            ContentView()
                 .environmentObject(basher)
         }
         MenuBarExtra {
