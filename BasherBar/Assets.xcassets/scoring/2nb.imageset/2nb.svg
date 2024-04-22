@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 73 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-158,-241)">
+        <g id="_2nb" serif:id="2nb" transform="matrix(1.125,0,0,1.125,158.557,241.725)">
+            <rect x="0" y="0" width="64" height="64" style="fill:none;"/>
+            <g transform="matrix(0.888889,0,0,0.888889,0,-70.1012)">
+                <path d="M36,82.864C53.661,82.864 68,97.203 68,114.864C68,132.525 53.661,146.864 36,146.864C18.339,146.864 4,132.525 4,114.864C4,97.203 18.339,82.864 36,82.864ZM35.909,90.864C49.155,90.864 59.909,101.618 59.909,114.864C59.909,128.11 49.155,138.864 35.909,138.864C22.663,138.864 11.909,128.11 11.909,114.864C11.909,101.618 22.663,90.864 35.909,90.864Z" style="fill:rgb(128,128,128);"/>
+            </g>
+            <g transform="matrix(1.38002,0,0,1.38002,78.7649,-122.008)">
+                <text x="-43.285px" y="122.864px" style="font-family:'SFProRounded-Bold', 'SF Pro Rounded';font-weight:700;font-size:32.109px;fill:rgb(128,128,128);">2</text>
+            </g>
+        </g>
+    </g>
+</svg>

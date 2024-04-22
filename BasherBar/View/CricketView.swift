@@ -225,19 +225,61 @@ struct RecentView: View {
     var recent: String
     
     var body: some View {
-        let chars = recent.split(separator: " ")
-        HStack {
-            ForEach(chars.indices, id: \.self) { index in
-                Text(chars[index])
+        let balls = recent.split(separator: " ")
+        VStack {
+            HStack {
+                ForEach(balls.indices, id: \.self) { index in
+                    blob(balls[index])
+                }
+                .frame(maxHeight: 36)
             }
         }
     }
     
+    @ViewBuilder
+    func blob(_ ball: String.SubSequence ) -> some View {
+        let b = String(ball)
+        let c = tint(b)
+        Label(
+            title: { Text(b) },
+            icon: { Image(b).resizable().scaledToFit() }
+        )
+        .labelStyle(.iconOnly)
+        .foregroundStyle(c)
+    }
+    
+    func tint(_ ball: String) -> Color {
+        switch ball {
+        case "4", "6": return .green
+        case _ where ball.hasSuffix("wd") : return .brown
+        case _ where ball.hasSuffix("nb") : return .orange
+        case _ where ball.hasSuffix("lb") : return .cyan
+        case _ where ball.hasSuffix("b") : return .blue
+        case "W" : return .red
+        case "|", "I" : return .secondary
+        default: return .primary
+        }
+    }
 }
 
 
-#Preview {
-    ContentView()
-        .environmentObject(Basher.dummy())
-        .frame(width: 600, height: 600)
+
+struct CricketPreview: PreviewProvider {
+    
+    static var previews: some View {
+        ContentView()
+            .environmentObject(Basher.dummy())
+            .frame(width: 600, height: 600)
+        
+        VStack {
+            RecentView(recent: " 0 . 1 2 3 4 5 6 |")
+            RecentView(recent: " I W |")
+            RecentView(recent: "wd 0wd 1wd 2wd 3wd 4wd 5wd 6wd ")
+            RecentView(recent: "0nb 1nb 2nb 3nb 4nb 5nb 6nb")
+            RecentView(recent: "1b 2b 3b 4b 5b 6b")
+            RecentView(recent: "1lb 2lb 3lb 4lb 5lb 6lb")
+        }
+        .padding()
+    }
 }
+
