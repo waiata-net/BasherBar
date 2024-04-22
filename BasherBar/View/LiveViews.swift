@@ -24,17 +24,22 @@ struct LiveView: View {
                 PartnershipView(partnership: part)
             }
             if let bowl = live.bowler {
+                Divider()
                 BowlerView(bowler: bowl)
+                Divider()
             }
+            RecentView(recent: live.recent)
+                .font(.title3)
             Text(live.blurb)
                 .font(.headline)
+            Spacer()
         }
     }
 }
 
 struct BatterView: View {
     
-    @State var batter: Cricket.Batter
+    var batter: Cricket.Batter
     
     var body: some View {
         HStack {
@@ -63,7 +68,7 @@ struct BatterView: View {
 
 struct PartnershipView: View {
     
-    @State var partnership: Cricket.Partnership
+    var partnership: Cricket.Partnership
     
     var body: some View {
         HStack {
@@ -82,11 +87,11 @@ struct PartnershipView: View {
 
 struct BowlerView: View {
     
-    @State var bowler: Cricket.Bowler
+    var bowler: Cricket.Bowler
     
     var body: some View {
         HStack {
-            PlayerLabel(player: bowler.player)
+            Text(bowler.player.name)
             Spacer()
             VStack {
                 Text("Overs").font(.caption2)
@@ -123,6 +128,21 @@ struct PlayerLabel: View {
             Text(player.name)
         }
     }
+}
+
+struct RecentView: View {
+    
+    var recent: String
+    
+    var body: some View {
+        let chars = recent.split(separator: " ")
+        HStack {
+            ForEach(chars.indices, id: \.self) { index in
+                Text(chars[index])
+            }
+        }
+    }
+    
 }
 
 #Preview {

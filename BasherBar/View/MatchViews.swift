@@ -38,12 +38,12 @@ struct MatchList: View {
 struct MatchItem: View {
     
     @EnvironmentObject var basher: Basher
-    @Binding var match: Cricket.Match
+    @Binding var match: Match
     
     var body: some View {
         HStack {
             Text(match.id.uuidString.suffix(3))
-            Text(match.versus)
+            Text(match.title)
         }
         .tag(match.id)
     }

@@ -16,6 +16,6 @@ extension Cricket {
         var nonStriker: Batter?
         var bowler: Bowler?
         var partnership: Partnership?
-        
+        var recent: String = ""
     }
 }

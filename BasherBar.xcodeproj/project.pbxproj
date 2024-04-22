@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080117112BD60C5300E341D4 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080117102BD60C5300E341D4 /* Match.swift */; };
 		08DD92FE2BBA54B6000E18BF /* BasherBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD92FD2BBA54B6000E18BF /* BasherBarApp.swift */; };
 		08DD93002BBA54B6000E18BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD92FF2BBA54B6000E18BF /* ContentView.swift */; };
 		08DD93022BBA54B7000E18BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08DD93012BBA54B7000E18BF /* Assets.xcassets */; };
@@ -27,14 +28,12 @@
 		08DD93472BBA7912000E18BF /* Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93462BBA7912000E18BF /* Web.swift */; };
 		08DD93492BBA8E64000E18BF /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93482BBA8E64000E18BF /* Fixture.swift */; };
 		08DD934B2BBA8FD9000E18BF /* CricHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD934A2BBA8FD9000E18BF /* CricHeroes.swift */; };
-		08DD934D2BBA9547000E18BF /* Cricket.Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD934C2BBA9547000E18BF /* Cricket.Match.swift */; };
+		08DD934D2BBA9547000E18BF /* Cricket.Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD934C2BBA9547000E18BF /* Cricket.Game.swift */; };
 		08DD934F2BBA9C26000E18BF /* FixtureViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD934E2BBA9C26000E18BF /* FixtureViews.swift */; };
 		08DD93512BBAA593000E18BF /* Web.Part.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93502BBAA593000E18BF /* Web.Part.swift */; };
 		08DD93532BBAADF3000E18BF /* Cricket.Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93522BBAADF3000E18BF /* Cricket.Team.swift */; };
 		08DD93552BBAAE35000E18BF /* Cricket.Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93542BBAAE35000E18BF /* Cricket.Score.swift */; };
 		08DD93582BBAB5F8000E18BF /* MatchViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93572BBAB5F8000E18BF /* MatchViews.swift */; };
-		08DDB05B2BD501340016502D /* Basher.Cricket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DDB05A2BD501340016502D /* Basher.Cricket.swift */; };
-		08DDB05D2BD507D00016502D /* Cricheroes.Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DDB05C2BD507D00016502D /* Cricheroes.Match.swift */; };
 		08DDB05F2BD554310016502D /* Cricket.Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DDB05E2BD554310016502D /* Cricket.Live.swift */; };
 		08DDB0612BD554540016502D /* Cricket.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DDB0602BD554540016502D /* Cricket.Player.swift */; };
 		08DDB0632BD5605F0016502D /* LiveViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DDB0622BD5605F0016502D /* LiveViews.swift */; };
@@ -58,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		080117102BD60C5300E341D4 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		08DD92FA2BBA54B6000E18BF /* BasherBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasherBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08DD92FD2BBA54B6000E18BF /* BasherBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasherBarApp.swift; sourceTree = "<group>"; };
 		08DD92FF2BBA54B6000E18BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,14 +81,12 @@
 		08DD93462BBA7912000E18BF /* Web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web.swift; sourceTree = "<group>"; };
 		08DD93482BBA8E64000E18BF /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		08DD934A2BBA8FD9000E18BF /* CricHeroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricHeroes.swift; sourceTree = "<group>"; };
-		08DD934C2BBA9547000E18BF /* Cricket.Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricket.Match.swift; sourceTree = "<group>"; };
+		08DD934C2BBA9547000E18BF /* Cricket.Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricket.Game.swift; sourceTree = "<group>"; };
 		08DD934E2BBA9C26000E18BF /* FixtureViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViews.swift; sourceTree = "<group>"; };
 		08DD93502BBAA593000E18BF /* Web.Part.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web.Part.swift; sourceTree = "<group>"; };
 		08DD93522BBAADF3000E18BF /* Cricket.Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricket.Team.swift; sourceTree = "<group>"; };
 		08DD93542BBAAE35000E18BF /* Cricket.Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricket.Score.swift; sourceTree = "<group>"; };
 		08DD93572BBAB5F8000E18BF /* MatchViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViews.swift; sourceTree = "<group>"; };
-		08DDB05A2BD501340016502D /* Basher.Cricket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basher.Cricket.swift; sourceTree = "<group>"; };
-		08DDB05C2BD507D00016502D /* Cricheroes.Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricheroes.Match.swift; sourceTree = "<group>"; };
 		08DDB05E2BD554310016502D /* Cricket.Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricket.Live.swift; sourceTree = "<group>"; };
 		08DDB0602BD554540016502D /* Cricket.Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricket.Player.swift; sourceTree = "<group>"; };
 		08DDB0622BD5605F0016502D /* LiveViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViews.swift; sourceTree = "<group>"; };
@@ -209,8 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				08DD932F2BBA5588000E18BF /* Basher.swift */,
-				08DDB05A2BD501340016502D /* Basher.Cricket.swift */,
 				08DD93482BBA8E64000E18BF /* Fixture.swift */,
+				080117102BD60C5300E341D4 /* Match.swift */,
 			);
 			path = Basher;
 			sourceTree = "<group>";
@@ -222,7 +220,6 @@
 				08DD93412BBA67EC000E18BF /* Web.Page.swift */,
 				08DD93502BBAA593000E18BF /* Web.Part.swift */,
 				08DD934A2BBA8FD9000E18BF /* CricHeroes.swift */,
-				08DDB05C2BD507D00016502D /* Cricheroes.Match.swift */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -231,7 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				08DD932D2BBA5563000E18BF /* Cricket.swift */,
-				08DD934C2BBA9547000E18BF /* Cricket.Match.swift */,
+				08DD934C2BBA9547000E18BF /* Cricket.Game.swift */,
 				08DDB05E2BD554310016502D /* Cricket.Live.swift */,
 				08DD93522BBAADF3000E18BF /* Cricket.Team.swift */,
 				08DDB0602BD554540016502D /* Cricket.Player.swift */,
@@ -389,16 +386,15 @@
 				08DD933D2BBA6241000E18BF /* CricketView.swift in Sources */,
 				08DD93422BBA67EC000E18BF /* Web.Page.swift in Sources */,
 				08DD93452BBA6ECF000E18BF /* Preference.swift in Sources */,
-				08DD934D2BBA9547000E18BF /* Cricket.Match.swift in Sources */,
-				08DDB05D2BD507D00016502D /* Cricheroes.Match.swift in Sources */,
+				08DD934D2BBA9547000E18BF /* Cricket.Game.swift in Sources */,
 				08DD93472BBA7912000E18BF /* Web.swift in Sources */,
 				08DDB0612BD554540016502D /* Cricket.Player.swift in Sources */,
 				08DDB05F2BD554310016502D /* Cricket.Live.swift in Sources */,
+				080117112BD60C5300E341D4 /* Match.swift in Sources */,
 				08DD93552BBAAE35000E18BF /* Cricket.Score.swift in Sources */,
 				08DD93352BBA59E0000E18BF /* Defaults.swift in Sources */,
 				08DD933B2BBA6239000E18BF /* SettingView.swift in Sources */,
 				08DD92FE2BBA54B6000E18BF /* BasherBarApp.swift in Sources */,
-				08DDB05B2BD501340016502D /* Basher.Cricket.swift in Sources */,
 				08DD933F2BBA6301000E18BF /* Dummy.swift in Sources */,
 				08DD932C2BBA5545000E18BF /* BarLabel.swift in Sources */,
 			);

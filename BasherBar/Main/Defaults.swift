@@ -21,6 +21,7 @@ struct Default {
     @Preference(key: .matchPage, def: Web.Page())
     static var matchPage: Web.Page
     
+    static var refreshRate: TimeInterval? = 15
     
 }
 

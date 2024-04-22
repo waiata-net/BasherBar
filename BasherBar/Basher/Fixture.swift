@@ -37,20 +37,20 @@ struct Fixture: Identifiable, Codable {
         self.title = doc.title ?? "?"
     }
     
-    func matches() async -> [Cricket.Match] {
+    func matches() async -> [Match] {
         guard let doc = try? await page.doc() else { return [] }
         return doc.elements(CricHeroes.fixtureMatches).compactMap {
             match(in: $0)
         }
     }
     
-    func match(in box: Fuzi.XMLElement) -> Cricket.Match? {
-        var match = Cricket.Match()
-        match.league = box.string(CricHeroes.fixtureLeague)
-        match.teams = box.elements(CricHeroes.fixtureTeams).compactMap {
+    func match(in box: Fuzi.XMLElement) -> Match {
+        var match = Match()
+        let teams = box.elements(CricHeroes.fixtureTeams).compactMap {
             let name = $0.string(CricHeroes.fixtureTeamName) ?? ""
             return Cricket.Team(name: name)
         }
+        match.title = teams.map { $0.name }.joined(separator: " v ")
         return match
     }
     

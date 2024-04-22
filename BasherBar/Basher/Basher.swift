@@ -17,7 +17,6 @@ class Basher: ObservableObject {
             
         }
     }
-
     
     func addFixture() {
         let new = Fixture()
@@ -28,17 +27,18 @@ class Basher: ObservableObject {
         guard let index = fixtures.firstIndex(where: { $0.id == fixture.id }) else { return }
         fixtures.remove(at: index)
     }
-
+    
     // MARK: - Matches
     
-    var matches = [Cricket.Match]()
+    var matches = [Match]()
     
     @Published var selectedMatchID: UUID?
     
-    @Published var match = Cricket.Match()
+    @Published var match = Match()
     
     // MARK: - Fetch
     
+    /// Get matches from fixtures
     func fetch() async {
         matches = []
         for fixture in fixtures {
@@ -51,7 +51,7 @@ class Basher: ObservableObject {
     // MARK: - Bar
     
     var bar: String {
-        matches.first?.versus ?? "Bashers!"
+        matches.first?.title ?? "Bashers!"
     }
     
     // MARK: - Pagination
@@ -62,4 +62,46 @@ class Basher: ObservableObject {
         case setting
         case cricket
     }
+    
+    // MARK: - Timer
+    
+    var ticker = Timer()
+    
+    func tick() {
+        guard let refresh = Default.refreshRate else { return }
+        ticker = Timer.scheduledTimer(withTimeInterval: refresh, repeats: false) { _ in
+            self.tock()
+        }
+    }
+    
+    func tock()  {
+        ticker.invalidate()
+        Task {
+            await update()
+        }
+        
+        self.tick()
+    }
+    
+    func update() async {
+        if let game = try? await gameTask.value {
+            DispatchQueue.main.async {
+                self.match.game = game
+            }
+        }
+    }
+    
+    // MARK: - Game
+    
+    
+    
+    typealias GameTask = Task<Cricket.Game?, any Error>
+    
+    var gameTask: GameTask {
+        Task { () -> Cricket.Game? in
+            let game = try await CricHeroes.fetch(match)
+            return game
+        }
+    }
+    
 }

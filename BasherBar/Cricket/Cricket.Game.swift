@@ -8,15 +8,7 @@
 import Foundation
 
 extension Cricket {
-    struct Match: Identifiable {
-        
-        var id = UUID()
-        
-        var link = ""
-        
-        var page: Web.Page {
-            Web.Page(address: link)
-        }
+    struct Game {
         
         var league: String?
         var venue: String?

@@ -21,11 +21,11 @@ extension Fixture {
     }
 }
 
-extension Cricket.Match {
+extension Match {
     
     static let link = "http://localhost/data/cricheroes.html"
     
-    static func dummy() -> Cricket.Match {
-        Cricket.Match(link: link)
+    static func dummy() -> Match {
+        Match(link: link)
     }
 }
