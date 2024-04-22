@@ -7,40 +7,48 @@
 
 import SwiftUI
 
+@MainActor
 class Basher: ObservableObject {
     
     // MARK: - Fixtures
     
     @Published var fixtures: [Fixture] = Default.fixtures {
-        didSet { Default.fixtures = self.fixtures }
+        didSet { updateFixtures() }
+    }
+        
+    func updateFixtures() {
+        Task {
+            Default.fixtures = self.fixtures
+            await fetchMatches()
+        }
     }
     
     func newFixture() {
         let new = Fixture()
-        fixtures.append(new)
+        self.fixtures.append(new)
     }
     
     func trash(_ fixture: Fixture) {
-        guard let index = fixtures.firstIndex(where: { $0.id == fixture.id }) else { return }
-        fixtures.remove(at: index)
+        guard let index = self.fixtures.firstIndex(where: { $0.id == fixture.id }) else { return }
+        self.fixtures.remove(at: index)
     }
     
     // MARK: - Matches
     
-    var matches = [Match]()
-    
-    @Published var selectedMatchID: UUID?
+    @Published var matches = [Match]()
     
     @Published var match = Match()
     
     // MARK: - Fetch
     
     /// Get matches from fixtures
-    func fetch() async {
+    func fetchMatches() async {
         matches = []
+        Task {
         for fixture in fixtures {
             let more = await fixture.matches()
-            matches.append(contentsOf: more)
+                self.matches.append(contentsOf: more)
+            }
         }
     }
     

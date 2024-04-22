@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct BasherBarApp: App {
     
-    @State var basher = Basher()
+    @StateObject var basher = Basher()
     
     var body: some Scene {
         Window("Settings", id: "Settings") {

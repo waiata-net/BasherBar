@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Match: Identifiable {
+struct Match: Identifiable, Hashable {
     
     var id = UUID()
     
@@ -20,4 +20,14 @@ struct Match: Identifiable {
     }
     
     var game: Cricket.Game?
+    
+    // MARK: - Hashable
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: Match, rhs: Match) -> Bool {
+        lhs.id == rhs.id
+    }
 }

@@ -13,8 +13,7 @@ struct MatchPick: View {
     @EnvironmentObject var basher: Basher
     
     var body: some View {        
-        Picker("Select a Match", selection: $basher.selectedMatchID) {
-            Text("Pick a Match").tag(nil as UUID?)
+        Picker("Select a Match", selection: $basher.match) {
             ForEach($basher.matches.indices, id: \.self) { index in
                 MatchItem(match: $basher.matches[index] )
             }

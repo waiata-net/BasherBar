@@ -18,7 +18,7 @@ struct CricketView: View {
     var body: some View {
         VStack {
             
-            MatchView()
+            MatchPick()
             
             Divider()
             

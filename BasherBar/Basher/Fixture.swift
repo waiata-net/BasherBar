@@ -39,7 +39,8 @@ struct Fixture: Identifiable, Codable {
     
     func matches() async -> [Match] {
         guard let doc = try? await page.doc() else { return [] }
-        return doc.elements(CricHeroes.fixtureMatches).compactMap {
+        let boxes = doc.elements(CricHeroes.fixtureMatches)
+        return boxes.compactMap {
             match(in: $0)
         }
     }

@@ -14,10 +14,11 @@ struct SettingView: View {
     var body: some View {
         Form {
             FixtureList()
+            MatchList()
             MatchPick()
             Button {
                 Task {
-                    await basher.fetch()
+                    await basher.fetchMatches()
                 }
             } label: {
                 Label("Reload", systemImage: "arrow.uturn.down")
@@ -27,7 +28,7 @@ struct SettingView: View {
         }
         .padding()
         .task {
-            await basher.fetch()
+            await basher.fetchMatches()
         }
     }
     
