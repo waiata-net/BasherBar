@@ -16,7 +16,7 @@ struct FixtureList: View {
             ForEach(basher.fixtures.indices, id: \.self) { index in
                 FixtureItem(fixture: $basher.fixtures[index] )
             }
-            Button(action: basher.addFixture) {
+            Button(action: basher.newFixture) {
                 Label ("Add Fixture", systemImage: "plus.square")
             }
         }

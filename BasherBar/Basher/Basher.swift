@@ -12,13 +12,10 @@ class Basher: ObservableObject {
     // MARK: - Fixtures
     
     @Published var fixtures: [Fixture] = Default.fixtures {
-        didSet {
-            Default.fixtures = self.fixtures
-            
-        }
+        didSet { Default.fixtures = self.fixtures }
     }
     
-    func addFixture() {
+    func newFixture() {
         let new = Fixture()
         fixtures.append(new)
     }
