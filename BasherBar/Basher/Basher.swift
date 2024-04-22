@@ -63,9 +63,17 @@ class Basher: ObservableObject {
     
     // MARK: - Bar
     
-    var bar: String {
-        matches.first?.title ?? "Bashers!"
+    typealias Bar = (text: String, icon: String?)
+    
+    func bar() -> Bar {
+        guard let game = games.randomElement() else { return Basher.defaultBar }
+        let text = game.bar()
+        
+        return (text: text, icon: nil)
     }
+    
+    static let defaultBar: Bar = (text: "Bashers!", icon: nil)
+    
     
     // MARK: - Pagination
     
@@ -81,7 +89,8 @@ class Basher: ObservableObject {
     var ticker = Timer()
     
     func tick() {
-        guard let refresh = Default.refreshRate else { return }
+        let refresh = Default.gameRate
+        guard refresh > 0 else { return }
         ticker = Timer.scheduledTimer(withTimeInterval: refresh, repeats: false) { _ in
             DispatchQueue.main.async {
                 self.tock()

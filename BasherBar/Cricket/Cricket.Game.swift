@@ -20,6 +20,10 @@ extension Cricket {
         
         var live = Live()
         
+        var isLive: Bool {
+           current != nil
+        }
+        
         var scores: [Cricket.Score] {
             teams.flatMap { $0.inns }
                 .sorted { $0.order < $1.order }
@@ -52,6 +56,15 @@ extension Cricket {
             teams.map(\.name).joined(separator: " v ")
         }
         
+        var initials: String {
+            teams.map(\.initials).joined(separator: ".")
+        }
+        
+        // MARK: - Bar
+        
+        func bar() -> String {
+            current?.score.text ?? live.blurb
+        }
         
     }
 }

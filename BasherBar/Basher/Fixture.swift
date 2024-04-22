@@ -19,7 +19,6 @@ struct Fixture: Identifiable, Codable {
     var page = Web.Page()
     var title = ""
     
-    
     init() { }
     
     init(page: Web.Page) async {
@@ -34,7 +33,7 @@ struct Fixture: Identifiable, Codable {
     }
     
     mutating func read(doc: HTMLDocument) {
-        self.title = doc.title ?? "?"
+        self.title = doc.title ?? page.address
     }
     
     func matches() async -> [Match] {

@@ -12,14 +12,27 @@ struct BasherBarApp: App {
     
     @StateObject var basher = Basher()
     
+    @Environment(\.openWindow) var openWindow
+
+    @State var hide = true
+    
     var body: some Scene {
         Window("Cricket", id: "Cricket") {
             ContentView()
                 .environmentObject(basher)
         }
         MenuBarExtra {
-            ContentView()
-                .environmentObject(basher)
+            VStack {
+                ContentView()
+                Button {
+                    openWindow(id: "Cricket")
+                } label: {
+                    Label("Open Window", systemImage: "macwindow")
+                }
+                .padding(.bottom)
+            }
+            .environmentObject(basher)
+                
         } label: {
             BarLabel()
                 .environmentObject(basher)
@@ -27,4 +40,5 @@ struct BasherBarApp: App {
         .menuBarExtraStyle(.window)
        
     }
+    
 }

@@ -11,24 +11,35 @@ struct SettingView: View {
     
     @EnvironmentObject var basher: Basher
     
+    @AppStorage(Default.key(.gameRate)) var gameRate: TimeInterval = 0
+    @AppStorage(Default.key(.barRate)) var barRate: TimeInterval = 0
+    
     var body: some View {
-        Form {
+        VStack {
+            
             FixtureList()
+                .frame(height: 69)
             
             MatchList()
             
-            Button {
-                Task {
-                    await basher.fetchMatches()
-                }
-            } label: {
-                Label("Reload", systemImage: "arrow.uturn.down")
-            }
+            Divider()
             
-            RefreshPick()
-                .onSubmit {
-                    basher.tock()
+            Form {
+                RefreshPick(label: "Refresh Matches:", rate: $gameRate)
+                    .onSubmit { basher.tock() }
+                
+                RefreshPick(label: "Refresh Bar:", rate: $barRate)
+                    .onSubmit { basher.tock() }
+                
+                Divider()
+                
+                Button {
+                    NSApplication.shared.terminate(nil)
+                } label: {
+                    Label("Quit", systemImage: "power")
                 }
+                .keyboardShortcut("q")
+            }
         }
         .padding()
         .task {
@@ -39,18 +50,20 @@ struct SettingView: View {
     
     struct RefreshPick: View {
         
-        @AppStorage(Default.key(.refresh)) var rate: TimeInterval?
+        var label: String = "Refresh:"
+        @Binding var rate: TimeInterval
         
         var body: some View {
             HStack {
-                Picker("Refresh:", selection: $rate) {
-                    Text("Off").tag(nil as TimeInterval?)
-                    Text("10 seconds").tag(10 as TimeInterval?)
-                    Text("15 seconds").tag(15 as TimeInterval?)
-                    Text("30 seconds").tag(30 as TimeInterval?)
-                    Text("1 minute").tag(60 as TimeInterval?)
-                    Text("5 minutes").tag(300 as TimeInterval?)
-                    Text("15 minutes").tag(900 as TimeInterval?)
+                Picker(label, selection: $rate) {
+                    Text("Off").tag(0.0)
+                    Text("5 seconds").tag(5.0)
+                    Text("10 seconds").tag(10.0)
+                    Text("15 seconds").tag(15.0)
+                    Text("30 seconds").tag(30.0)
+                    Text("1 minute").tag(60.0)
+                    Text("5 minutes").tag(300.0)
+                    Text("15 minutes").tag(900.0)
                 }
             }
         }

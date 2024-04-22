@@ -19,5 +19,12 @@ extension Cricket {
         var score: String {
             inns.map { $0.text }.joined(separator: "&")
         }
+        
+        var initials: String {
+            let words = name.split(separator: " ")
+            let inits = words.compactMap { String($0.prefix(1)) }
+            let join = inits.joined()
+            return join
+        }
     }
 }

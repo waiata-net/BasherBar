@@ -21,12 +21,21 @@ struct Default {
         }
     }
     
-    static var refreshRate: TimeInterval? {
+    static var gameRate: TimeInterval {
         get {
-            get(.refresh) as? TimeInterval
+            get(.gameRate) as? TimeInterval ?? 60
         }
         set {
-            set(.refresh, newValue)
+            set(.gameRate, newValue)
+        }
+    }
+    
+    static var barRate: TimeInterval {
+        get {
+            get(.barRate) as? TimeInterval ?? 15
+        }
+        set {
+            set(.barRate, newValue)
         }
     }
     
@@ -46,7 +55,8 @@ struct Default {
     enum Key: String {
         
         case fixtures
-        case refresh
+        case gameRate
+        case barRate
         
     }
 }

@@ -36,7 +36,6 @@
 		08DD93582BBAB5F8000E18BF /* MatchViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD93572BBAB5F8000E18BF /* MatchViews.swift */; };
 		08DDB05F2BD554310016502D /* Cricket.Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DDB05E2BD554310016502D /* Cricket.Live.swift */; };
 		08DDB0612BD554540016502D /* Cricket.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DDB0602BD554540016502D /* Cricket.Player.swift */; };
-		08DDB0632BD5605F0016502D /* LiveViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DDB0622BD5605F0016502D /* LiveViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +88,6 @@
 		08DD93572BBAB5F8000E18BF /* MatchViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViews.swift; sourceTree = "<group>"; };
 		08DDB05E2BD554310016502D /* Cricket.Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricket.Live.swift; sourceTree = "<group>"; };
 		08DDB0602BD554540016502D /* Cricket.Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricket.Player.swift; sourceTree = "<group>"; };
-		08DDB0622BD5605F0016502D /* LiveViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +196,6 @@
 				08DD934E2BBA9C26000E18BF /* FixtureViews.swift */,
 				08DD93572BBAB5F8000E18BF /* MatchViews.swift */,
 				08DD933C2BBA6241000E18BF /* CricketView.swift */,
-				08DDB0622BD5605F0016502D /* LiveViews.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -377,7 +374,6 @@
 				08DD93512BBAA593000E18BF /* Web.Part.swift in Sources */,
 				08DD93492BBA8E64000E18BF /* Fixture.swift in Sources */,
 				080117132BD6577600E341D4 /* Toolbar.swift in Sources */,
-				08DDB0632BD5605F0016502D /* LiveViews.swift in Sources */,
 				08DD93002BBA54B6000E18BF /* ContentView.swift in Sources */,
 				08DD934F2BBA9C26000E18BF /* FixtureViews.swift in Sources */,
 				08DD932E2BBA5563000E18BF /* Cricket.swift in Sources */,
@@ -560,6 +556,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -598,6 +595,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

@@ -22,12 +22,13 @@ struct ContentView: View {
             ForEach(basher.games) { game in
                 GameView(game: game)
                     .tag(Basher.Tab.cricket(game.id))
-                    .tabItem { Text(game.versus) }
+                    .tabItem { Text(game.initials) }
             }
             
             
         }
         .padding()
+        .frame(minWidth: 480)
         .toolbar {
             Toolbar()
         }

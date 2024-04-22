@@ -14,16 +14,31 @@ struct FixtureList: View {
     @State var adding = false
     
     var body: some View {
-        List {
+        VStack {
             ForEach(basher.fixtures.indices, id: \.self) { index in
                 FixtureItem(fixture: $basher.fixtures[index] )
             }
-            Button {
-                adding = true
-            } label: {
-                Label ("Add Fixture", systemImage: "plus.square")
+            
+            HStack {
+                
+                Button {
+                    adding = true
+                } label: {
+                    Label ("Add Fixture", systemImage: "plus.square")
+                }
+                
+                Spacer()
+                
+                Button {
+                    Task {
+                        await basher.fetchMatches()
+                    }
+                } label: {
+                    Label("Reload", systemImage: "arrow.uturn.down")
+                }
             }
         }
+        .padding()
         .sheet(isPresented: $adding) {
             AddFixture()
         }
@@ -62,24 +77,22 @@ struct FixtureItem: View {
     @Binding var fixture: Fixture
     
     var body: some View {
-        HStack {
-            Button {
-                basher.visit(fixture)
-            } label: {
-                Text(fixture.page.address)
+        Text(fixture.page.address)
+            .contextMenu {
+                Button("Visit") {
+                    basher.visit(fixture)
+                }
+                Button("Delete") {
+                    basher.trash(fixture)
+                }
             }
-            Spacer()
-            Button {
-                basher.trash(fixture)
-            } label: {
-                Image(systemName: "trash")
-            }
-            .buttonStyle(.plain)
-        }
+            .textContentType(.URL)
     }
+    
 }
+
 
 #Preview {
     FixtureList()
-    .environmentObject(Basher.dummy())
+        .environmentObject(Basher.dummy())
 }
