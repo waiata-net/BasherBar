@@ -47,7 +47,7 @@ struct Fixture: Identifiable, Codable {
     func match(in box: Fuzi.XMLElement) -> Match {
         var match = Match()
         let teams = box.elements(CricHeroes.fixtureTeams).compactMap {
-            let name = $0.string(CricHeroes.fixtureTeamName) ?? ""
+            let name = $0.string(CricHeroes.fixtureTeamName)
             return Cricket.Team(name: name)
         }
         match.title = teams.map { $0.name }.joined(separator: " v ")

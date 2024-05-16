@@ -16,6 +16,13 @@ extension Cricket {
         var logo: String = ""
         var inns = [Score]()
         
+        init() { }
+        
+        init?(name: String?) {
+            guard let name, !name.isEmpty else { return nil }
+            self.name = name
+        }
+        
         var score: String {
             inns.map { $0.text }.joined(separator: "&")
         }

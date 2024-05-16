@@ -15,7 +15,7 @@ struct CricHeroes {
     static let fixtureLink = Web.Part(css: "a", attribute: "href", prefix: "https://cricheroes.com")
     static let fixtureLeague = Web.Part(css: "i")
     
-    static let fixtureTeams = Web.Part(css: ".dDmbeZ")
+    static let fixtureTeams = Web.Part(css: "a > div > div + div > div")
     static let fixtureTeamName = Web.Part(css: "div")
     
     typealias JSONObject = [AnyHashable: Any]
