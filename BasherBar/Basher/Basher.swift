@@ -67,9 +67,9 @@ class Basher: ObservableObject {
     
     func bar() -> Bar {
         guard let game = games.randomElement() else { return Basher.defaultBar }
-        let text = game.bar()
-        
-        return (text: text, icon: nil)
+        let text = game.text()
+        let icon = game.icon()
+        return (text: text, icon: icon)
     }
     
     static let defaultBar: Bar = (text: "Bashers!", icon: nil)

@@ -57,6 +57,7 @@ struct Default {
         case fixtures
         case gameRate
         case barRate
+        case refreshActive
         
     }
 }

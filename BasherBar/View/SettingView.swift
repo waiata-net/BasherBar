@@ -13,13 +13,14 @@ struct SettingView: View {
     
     @AppStorage(Default.key(.gameRate)) var gameRate: TimeInterval = 0
     @AppStorage(Default.key(.barRate)) var barRate: TimeInterval = 0
+    @AppStorage(Default.key(.refreshActive)) var refreshing = true
     
     var body: some View {
         VStack {
             
             FixtureList()
-                .frame(height: 69)
-            
+                .frame(minHeight: 69)
+            FixtureButts()
             MatchList()
             
             Divider()
@@ -32,13 +33,16 @@ struct SettingView: View {
                     .onSubmit { basher.tock() }
                 
                 Divider()
-                
-                Button {
-                    NSApplication.shared.terminate(nil)
-                } label: {
-                    Label("Quit", systemImage: "power")
+                HStack {
+                    Toggle("Auto Refresh", systemImage: "arrow.clockwise", isOn: $refreshing)
+                    Spacer()
+                    Button {
+                        NSApplication.shared.terminate(nil)
+                    } label: {
+                        Label("Quit", systemImage: "power")
+                    }
+                    .keyboardShortcut("q")
                 }
-                .keyboardShortcut("q")
             }
         }
         .padding()

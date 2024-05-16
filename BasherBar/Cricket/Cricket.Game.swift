@@ -62,8 +62,12 @@ extension Cricket {
         
         // MARK: - Bar
         
-        func bar() -> String {
+        func text() -> String {
             current?.score.text ?? live.blurb
+        }
+        
+        func icon() -> String? {
+            current?.team.logo
         }
         
     }

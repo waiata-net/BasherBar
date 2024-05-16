@@ -16,14 +16,35 @@ struct BarLabel: View {
     let tick = Timer.publish(every: Default.barRate, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        Label(
-            title: { Text(bar.text) },
-            icon: { Icon(icon: bar.icon)}
-        )
-        Text(bar.text)
-        .onReceive(tick) { input in
+//        Label(
+//            title: { Text(bar.text) },
+//            icon: { Icon(icon: bar.icon)}
+//        )
+//        
+        HStack {
+//            if let icon = bar.icon {
+//                AsyncImage(url: URL(string: icon)) { image in
+//                    image.resizable()
+//                } placeholder: {
+//                    Image("BasherLogo")
+//                }
+////                Image("BasherLogo")
+//            } else {
+                Image("BasherLogo")
+                .resizable()
+                .frame(width: 24, height: 24)
+//            }
+            Text(bar.text)
+                .onReceive(tick) { input in
+                    bar = basher.bar()
+                }
+        }
+        .onAppear() {
             bar = basher.bar()
         }
+        
+        
+
     }
     
     struct Icon: View {
