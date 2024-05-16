@@ -32,7 +32,6 @@ struct BarLabel: View {
 //            } else {
                 Image("BasherLogo")
                 .resizable()
-                .frame(width: 24, height: 24)
 //            }
             Text(bar.text)
                 .onReceive(tick) { input in

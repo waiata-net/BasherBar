@@ -40,6 +40,12 @@ extension Cricket {
             return innings(order)
         }
         
+        var score: Cricket.Score? {
+            current?.score
+        }
+        
+        var commentary = Cricket.Commentary()
+        
         func innings(_ order: Int) -> Innings? {
             let scores = self.scores
             guard let score = scores.first(where: { $0.order == order }),
@@ -50,6 +56,10 @@ extension Cricket {
         
         func team(id: Team.ID?) -> Team? {
             teams.first { $0.id == id }
+        }
+        
+        var battingTeam: Team? {
+            current?.team
         }
         
         var versus: String {

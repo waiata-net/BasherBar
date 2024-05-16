@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		080117112BD60C5300E341D4 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080117102BD60C5300E341D4 /* Match.swift */; };
 		080117132BD6577600E341D4 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080117122BD6577600E341D4 /* Toolbar.swift */; };
+		081C3E5A2BF61B1200C92F38 /* Basher Announce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C3E592BF61B1200C92F38 /* Basher Announce.swift */; };
+		081C3E5C2BF6282600C92F38 /* Cricket.Commentary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C3E5B2BF6282600C92F38 /* Cricket.Commentary.swift */; };
 		08DD92FE2BBA54B6000E18BF /* BasherBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD92FD2BBA54B6000E18BF /* BasherBarApp.swift */; };
 		08DD93002BBA54B6000E18BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD92FF2BBA54B6000E18BF /* ContentView.swift */; };
 		08DD93022BBA54B7000E18BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08DD93012BBA54B7000E18BF /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		080117102BD60C5300E341D4 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		080117122BD6577600E341D4 /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
+		081C3E592BF61B1200C92F38 /* Basher Announce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Basher Announce.swift"; sourceTree = "<group>"; };
+		081C3E5B2BF6282600C92F38 /* Cricket.Commentary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cricket.Commentary.swift; sourceTree = "<group>"; };
 		08DD92FA2BBA54B6000E18BF /* BasherBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasherBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08DD92FD2BBA54B6000E18BF /* BasherBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasherBarApp.swift; sourceTree = "<group>"; };
 		08DD92FF2BBA54B6000E18BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				08DD932F2BBA5588000E18BF /* Basher.swift */,
+				081C3E592BF61B1200C92F38 /* Basher Announce.swift */,
 				08DD93482BBA8E64000E18BF /* Fixture.swift */,
 				080117102BD60C5300E341D4 /* Match.swift */,
 			);
@@ -227,6 +232,7 @@
 				08DD932D2BBA5563000E18BF /* Cricket.swift */,
 				08DD934C2BBA9547000E18BF /* Cricket.Game.swift */,
 				08DDB05E2BD554310016502D /* Cricket.Live.swift */,
+				081C3E5B2BF6282600C92F38 /* Cricket.Commentary.swift */,
 				08DD93522BBAADF3000E18BF /* Cricket.Team.swift */,
 				08DDB0602BD554540016502D /* Cricket.Player.swift */,
 				08DD93542BBAAE35000E18BF /* Cricket.Score.swift */,
@@ -378,10 +384,12 @@
 				08DD934F2BBA9C26000E18BF /* FixtureViews.swift in Sources */,
 				08DD932E2BBA5563000E18BF /* Cricket.swift in Sources */,
 				08DD93582BBAB5F8000E18BF /* MatchViews.swift in Sources */,
+				081C3E5C2BF6282600C92F38 /* Cricket.Commentary.swift in Sources */,
 				08DD93302BBA5588000E18BF /* Basher.swift in Sources */,
 				08DD934B2BBA8FD9000E18BF /* CricHeroes.swift in Sources */,
 				08DD933D2BBA6241000E18BF /* CricketView.swift in Sources */,
 				08DD93422BBA67EC000E18BF /* Web.Page.swift in Sources */,
+				081C3E5A2BF61B1200C92F38 /* Basher Announce.swift in Sources */,
 				08DD934D2BBA9547000E18BF /* Cricket.Game.swift in Sources */,
 				08DD93472BBA7912000E18BF /* Web.swift in Sources */,
 				08DDB0612BD554540016502D /* Cricket.Player.swift in Sources */,

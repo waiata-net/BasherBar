@@ -9,7 +9,7 @@ import Foundation
 
 extension Cricket {
     
-    struct Score {
+    struct Score: Equatable {
         var order: Int = 0
         var team: Int?
         var over = Over()
@@ -28,7 +28,7 @@ extension Cricket {
         }
     }
     
-    struct Over {
+    struct Over: Equatable {
         var over: Int = 0
         var ball: Int = 0
         
@@ -40,7 +40,7 @@ extension Cricket {
             if balls == 0 {
                 return ""
             } else if ball == 0 {
-                return "\(over)"
+                return "\(over).\(ball)"
             } else {
                 return "\(over).\(ball)"
             }

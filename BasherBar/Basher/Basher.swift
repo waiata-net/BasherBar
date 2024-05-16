@@ -138,6 +138,7 @@ class Basher: ObservableObject {
     
     func update(_ game: Cricket.Game) {
         guard let index = insert(game) else { return }
+        announce(games[index], game)
         games[index] = game
     }
     

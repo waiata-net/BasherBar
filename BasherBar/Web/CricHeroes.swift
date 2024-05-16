@@ -58,6 +58,14 @@ struct CricHeroes {
     static let partnershipRuns = "runs"
     static let partnershipBalls = "balls"
     static let recent = "recent_over"
+    static let commentary = "commentary"
+    static let commentaryID = "ball_id"
+    static let commentaryBall = "ball"
+    static let commentaryRuns = "run"
+    static let commentaryExtras = "extra"
+    static let commentaryBoundary = "is_boundry"
+    static let commentaryWicket = "out_how"
+    static let commentaryText = "commentary"
     
     static func fetch(_ match: Match) async throws -> Cricket.Game? {
         guard
@@ -73,6 +81,7 @@ struct CricHeroes {
         }
         game.innNo = json[inningsNumber] as? Int ?? 0
         game.live = live(from: json)
+        game.commentary = commentary(from: json)
         return game
     }
     
@@ -140,6 +149,27 @@ struct CricHeroes {
         }
         live.recent = json[recent] as? String ?? ""
         return live
+    
+    }
+    
+    
+    
+    static func commentary(from json: JSONObject) -> Cricket.Commentary {
+        guard let items = json[commentary] as? [JSONObject] else { return .init() }
+        let balls = items.map { ball(from: $0) }
+        return Cricket.Commentary(balls: balls)
+    }
+    
+    static func ball(from json: JSONObject) -> Cricket.Commentary.Ball {
+        let id = json[commentaryID] as? Int ?? 0
+        let ball = json[commentaryBall] as? String ?? ""
+        let over = Cricket.Over[ball]
+        let runs = json[commentaryRuns] as? Int ?? 0
+        let extras = json[commentaryExtras] as? Int ?? 0
+        let boundary = json[commentaryBoundary] as? Bool ?? false
+        let wicket = json[commentaryWicket] as? String
+        let text = json[commentaryText] as? String ?? ""
+        return Cricket.Commentary.Ball(id: id, over: over, runs: runs, extras: extras, boundary: boundary, wicket: wicket, text: text)
     
     }
     

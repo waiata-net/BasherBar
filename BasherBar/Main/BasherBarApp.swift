@@ -32,7 +32,6 @@ struct BasherBarApp: App {
                 .padding(.bottom)
             }
             .environmentObject(basher)
-                
         } label: {
             BarLabel()
                 .environmentObject(basher)

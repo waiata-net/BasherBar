@@ -21,6 +21,8 @@ struct Match: Identifiable, Hashable {
     
     var game: Cricket.Game?
     
+    var score: Cricket.Score?
+    
     // MARK: - Hashable
     
     func hash(into hasher: inout Hasher) {

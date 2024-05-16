@@ -38,6 +38,8 @@ struct GameView: View {
             
             LiveView(live: game.live)
             
+            CommentaryView(commentary: game.commentary)
+            
             Button {
                 refreshing = true
                 Task {
@@ -258,6 +260,26 @@ struct RecentView: View {
         case "W" : return .red
         case "|", "I" : return .secondary
         default: return .primary
+        }
+    }
+}
+
+
+struct CommentaryView: View {
+    
+    var commentary: Cricket.Commentary
+    
+    var body: some View {
+        List {
+            ForEach(commentary.balls.indices, id: \.self) { index in
+                let ball = commentary.balls[index]
+                HStack {
+                    Text(ball.over.text)
+                        .font(.callout)
+                    Text(ball.text)
+                }
+            }
+            
         }
     }
 }
