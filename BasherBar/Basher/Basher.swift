@@ -90,7 +90,7 @@ class Basher: ObservableObject {
     
     func tick() {
         let refresh = Default.gameRate
-        guard refresh > 0 else { return }
+        guard refresh > 0, Default.refreshActive else { return }
         ticker = Timer.scheduledTimer(withTimeInterval: refresh, repeats: false) { _ in
             DispatchQueue.main.async {
                 self.tock()

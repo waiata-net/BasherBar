@@ -39,6 +39,15 @@ struct Default {
         }
     }
     
+    static var refreshActive: Bool {
+        get {
+            get(.refreshActive) as? Bool ?? true
+        }
+        set {
+            set(.refreshActive, newValue)
+        }
+    }
+    
     
     static func get(_ key: Key) -> Any? {
         UserDefaults.standard.value(forKey: key.rawValue)
